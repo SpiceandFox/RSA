@@ -29,7 +29,7 @@ namespace RSA
 
             while (true)
             {
-                if (((result * publicKey) % totient) == 1)
+                if ((((result * publicKey) % totient) == 1)&&(publicKey != result))
                 {
                     break;
                 }

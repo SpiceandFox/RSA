@@ -10,11 +10,16 @@ namespace RSA
             PickNewValues();
             while (true)
             {
+                Console.WriteLine("\n\nKEY GENERATOR\n");
                 Console.WriteLine("Enter new message: n");
                 Console.WriteLine("Generate new keys: k");
                 Console.WriteLine("Quit program:      q");
+                Console.WriteLine("Get key infos:     i");
                 switch (Console.ReadLine())
                 {
+                    case "i":
+                        ShowInfos();
+                        break;
                     case "k":
                         PickNewValues();
                         break;
@@ -30,6 +35,15 @@ namespace RSA
             }
            
         }
+
+        private static void ShowInfos()
+        {
+            Console.WriteLine("private key: " + keyGenerator.PrivateKey);
+            Console.WriteLine("public key:  " + keyGenerator.PublicKey);
+            Console.WriteLine("totient:     " + keyGenerator.Totient);
+            Console.WriteLine("product:     " + keyGenerator.Product);
+        }
+
         static void PickNewValues()
         {
             while (true)
