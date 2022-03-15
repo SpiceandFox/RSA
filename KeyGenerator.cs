@@ -88,7 +88,7 @@ namespace RSA
         {
             long[] messageInArray = message.Select(c => (long)c).ToArray();
             long[] encryptedMessageInArray = new long[messageInArray.Length];
-
+            //wird normalerweise für mehrere Zeichen gleichzeitig gemacht
             for (int i = 0; i < messageInArray.Length; i++)
             {
                 BigInteger buffer = IntPow(messageInArray[i], PublicKey);
@@ -105,7 +105,7 @@ namespace RSA
         {
             long[] encryptedMessageInArray = message.Select(c => (long)c).ToArray();
             long[] messageInArray = new long[encryptedMessageInArray.Length];
-
+            //wird normalerweise für mehrere Zeichen gleichzeitig gemacht
             for (int i = 0; i < encryptedMessageInArray.Length; i++)
             {
                 BigInteger buffer = IntPow(encryptedMessageInArray[i], PrivateKey);
