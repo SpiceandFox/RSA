@@ -63,6 +63,17 @@ namespace RSA
             {
                 throw new Exception("q is not a prime number");
             }
+
+            if (q < 10)
+            {
+                throw new Exception("q too small");
+            }
+
+            if (p < 10)
+            {
+                throw new Exception("p too small");
+            }
+
             return ((p - 1) * (q - 1));
         }
 
